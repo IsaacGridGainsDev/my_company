@@ -20,5 +20,7 @@ from content import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', views.product_list, name='product_list')
+    path('products/', views.product_list, name='product_list'),
+    path("products/category/<int:category_id>/", views.products_by_category, name="products_by_category"),
+    path("products/range/<int:min_price>-<int:max_price>/", views.products_range, name="products_range"),
 ]

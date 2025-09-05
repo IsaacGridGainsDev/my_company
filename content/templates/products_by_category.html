@@ -1,0 +1,8 @@
+<h1>Products in {{ category.name }}</h1>
+<ul>
+	{% for product in products %}
+		<li>{{ product.name }} - ${{ product.price }}</li>
+	{% empty %}
+		<li>No products found in this category.</li>
+	{% endfor %}
+</ul>

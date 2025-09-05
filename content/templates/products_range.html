@@ -1,0 +1,8 @@
+<h1>Products between ${{ min_price }} and ${{ max_price }}</h1>
+<ul>
+	{% for product in products %}
+		<li>{{ products.name }} - ${{ product.price }}</li>
+	{% empty %}
+		<li>No Products found in this price range</li>
+	{% endfor %}
+<ul>
