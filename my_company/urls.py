@@ -23,4 +23,7 @@ urlpatterns = [
     path('products/', views.product_list, name='product_list'),
     path("products/category/<int:category_id>/", views.products_by_category, name="products_by_category"),
     path("products/range/<int:min_price>-<int:max_price>/", views.products_range, name="products_range"),
+    path("products-cbv/", ProductListView.as_view(), name="product_list_cbv"),
+    path("product/<int>:pk>/", ProductDetailView.as_view(), name="product_detail_cbv"),
+    path("products/range-cbv/<int:min_price>-<int:max_price>/", ProductRangeView.as_view(), name="product_range_cbv")
 ]
