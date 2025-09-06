@@ -1,0 +1,25 @@
+<!--understanding the django template structure-->
+<! DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}My Site{% endblock %}</title>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					{% for book in book_list %}
+					<li><a href="{% url 'book-detail' book.id %}">{{book.title}} by {{book.author}</a>}</li>
+
+				</ul>
+			</nav>
+
+		</header>
+		{% block content %}{% endblock %}
+		<footer>{% block content %} {% endblock %}</footer>
+		<script src="{% static 'js/index.js' %></script>
+	</body>
+
+</html>
